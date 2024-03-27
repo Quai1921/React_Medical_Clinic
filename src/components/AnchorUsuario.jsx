@@ -6,8 +6,8 @@ function Anchor({href, title}) {
     return (
             <NavLink to={href} className={({ isActive }) =>
             isActive 
-            ? "bg-white rounded-md py-2 px-1 hover:bg-red-700 hover:text-white w-28 text-center font-bold text-red-600" 
-            : "bg-red-600 rounded-md py-2 px-1 hover:bg-red-700 w-28 text-center font-bold text-white"}
+            ? "bg-white h-full rounded-t-lg p-2 text-[17px] text-center font-semibold text-[#F19E22]" 
+            : " p-2 text-[18px] hover:bg-white text-center font-semibold text-white hover:text-[#F19E22] hover:h-full rounded-t-lg"}
             >{title}</NavLink>
     )
 }

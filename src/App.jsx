@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/MainLayout'
 import Appointments from './pages/Appointments'
+import Specialties from './pages/Specialties'
 
 
 function App() {
@@ -27,8 +28,8 @@ function App() {
           }>
 
           <Route path="accounts" element={<Appointments/>} />
-          {/* <Route path="cards" element={<CardsWithAuth />} />
-          <Route path="loans" element={<LoansWithAuth />} />
+          <Route path="specialties" element={<Specialties />} />
+          {/*<Route path="loans" element={<LoansWithAuth />} />
           <Route path="accounts/:id" element={<AccountDetailWithAuth />} />
           <Route path="transactions" element={<TransactionsWithAuth />} />
           <Route path="*" element={<NotFoundError />} /> */}
