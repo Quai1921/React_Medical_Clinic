@@ -11,10 +11,10 @@ export default function Carrousel() {
     return (
     <>
     <Swiper
-        // autoplay={{
-        // delay: 4000, 
-        // disableOnInteraction: false, 
-        // }}
+        autoplay={{
+        delay: 4000, 
+        disableOnInteraction: false, 
+        }}
 
         pagination={{
             dynamicBullets: true,
