@@ -138,7 +138,7 @@ function Contact() {
                         <fieldset className='flex flex-col justify-center items-center gap-3 relative md:flex-row'>
                             <div className='flex justify-center items-center gap-3'>
                                 <img className='w-8' src="/Discover.png" alt="Icon discover" />
-                                <select name="discover" value={formData.discover} className="font-semibold cursor-pointer border-2 border-[#F19E22] w-[300px] rounded-xl h-10 px-4" onChange={handleChange}>
+                                <select name="discover" value={formData.discover} className="font-semibold cursor-pointer border-2 border-[#F19E22] w-[268px] rounded-xl h-10 px-4" onChange={handleChange}>
                                     <option className='text-gray-500 italic' value="">How did you find out about us?</option>
                                     <option value="Social Media">Social Media</option>
                                     <option value="Friend">Friend</option>
