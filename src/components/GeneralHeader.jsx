@@ -6,8 +6,6 @@ import { NavLink } from 'react-router-dom'
 
 const GeneralHeader = () => {
 
-    const customShadowStyle = {
-        textShadow: '0px 0px 2px rgba(255, 255, 255, 0.5)'}
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -33,8 +31,8 @@ const GeneralHeader = () => {
                 <div className='flex items-center w-[100%] justify-around'>
                     <img className='w-60 pt-4 max-[768px]:hidden' src="/LogoSerenetyH.png" alt="Image logo Serenety Health Center" />
                     <div className='flex gap-6 pt-4'>
-                        <NavLink to="/register" className="max-[768px]:hidden w-[120px] p-2 text-center font-bold text-white hover:text-white bg-[#F19E22] rounded-xl hover:bg-[#dc901e]">Sing up</NavLink>
-                        <NavLink to="/login" className="max-[768px]:hidden w-[120px] p-2 text-center font-bold text-white bg-[#F19E22] rounded-xl hover:bg-[#dc901e]">Sing in</NavLink>
+                        <NavLink to="/register" className="max-[768px]:hidden w-[120px] p-2 text-center font-bold text-white hover:text-white bg-[#F19E22] rounded-xl hover:bg-[#dc901e]">Sign up</NavLink>
+                        <NavLink to="/login" className="max-[768px]:hidden w-[120px] p-2 text-center font-bold text-white bg-[#F19E22] rounded-xl hover:bg-[#dc901e]">Sign in</NavLink>
                     </div>
                     
                 </div>
@@ -77,8 +75,8 @@ const GeneralHeader = () => {
                             <NavLink to="/specialtiesHome" className="p-2 text-center font-bold text-white hover:text-[#F19E22]">Medical Specialties</NavLink>
                             <NavLink to="/contact" className="p-2 text-center font-bold text-white hover:text-[#F19E22]">Contact</NavLink>
                             <hr className='w-[95%]' />
-                            <NavLink to="/register" className="p-2 text-center font-bold text-[#F19E22] hover:text-white">Sing up</NavLink>
-                            <NavLink to="/login" className="p-2 text-center font-bold text-[#F19E22] hover:text-white">Sing in</NavLink>
+                            <NavLink to="/register" className="p-2 text-center font-bold text-[#F19E22] hover:text-white">Sign up</NavLink>
+                            <NavLink to="/login" className="p-2 text-center font-bold text-[#F19E22] hover:text-white">Sign in</NavLink>
                         </div>
                     )}
             </header>

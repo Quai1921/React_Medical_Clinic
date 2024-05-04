@@ -7,9 +7,9 @@ import GeneralFooter from '../components/GeneralFooter.jsx'
 import TermsAndConditions from '../components/TermsAndConditions.jsx'
 import axios from 'axios'
 import GeneralHeader from '../components/GeneralHeader.jsx'
-import { getRoleFromJWT } from '../utils/UserRole'
+import { getRoleFromJWT } from '../utils/UserRole.js'
 
-function SingIn() {
+function SignIn() {
 
     const [userData, setUserData] = useState({email: "", password: ""})
     const [invalidEntrance, setinvalidEntrance] = useState("")
@@ -26,7 +26,7 @@ function SingIn() {
     const navigate = useNavigate()
 
 
-    function handleSingIn(e) {
+    function handleSignIn(e) {
         e.preventDefault()
 
         let emailValid = true
@@ -147,7 +147,7 @@ function SingIn() {
         <main className='w-full flex flex-col flex-1'>
             <div className='flex flex-wrap justify-center items-center'>
                 <img className='md:w-1/2' src="/Login.jpg" alt="Image a doctor" />
-                <form className='flex flex-col justify-center items-center gap-5 p-8 md:w-1/2' onSubmit={handleSingIn}>
+                <form className='flex flex-col justify-center items-center gap-5 p-8 md:w-1/2' onSubmit={handleSignIn}>
                         <fieldset className='flex justify-center items-center gap-3 relative'>
                             <img className='w-8' src="/User.png" alt="" />
                             <div className='relative flex'>
@@ -166,9 +166,9 @@ function SingIn() {
                             <p className='text-red-600 font-bold italic text-xs absolute bottom-[-16px] left-[50px]'>{invalidEntrance}</p>
                         </fieldset>
 
-                        <input type="submit" value="Sing in" className='bg-[#F19E22] rounded-xl py-2 px-1 hover:bg-[#dc901e] w-[180px] text-center font-bold text-white cursor-pointer'/>
+                        <input type="submit" value="Sign in" className='bg-[#F19E22] rounded-xl py-2 px-1 hover:bg-[#dc901e] w-[180px] text-center font-bold text-white cursor-pointer'/>
                         <p className='text-red-600 font-semibold cursor-pointer text-xs underline'>Have you forgotten your password?</p>
-                        <NavLink to={"/register"} className='text-red-600 font-semibold cursor-pointer text-xs underline'>Are you not registered yet? SING UP</NavLink>
+                        <NavLink to={"/register"} className='text-red-600 font-semibold cursor-pointer text-xs underline'>Are you not registered yet? SIGN UP</NavLink>
                 </form>
             </div>
             
@@ -184,4 +184,4 @@ function SingIn() {
     </>    )
 }
 
-export default SingIn
+export default SignIn

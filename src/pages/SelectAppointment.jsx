@@ -25,8 +25,8 @@ function SelectAppointment() {
 
     const [successDelete, setSuccessDelete] = useState(false)
 
-    const [selectedSpeciality, setSelectedSpeciality] = useState('');
-    const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const [selectedSpeciality, setSelectedSpeciality] = useState('')
+    const [selectedDoctor, setSelectedDoctor] = useState(null)
 
     let appoinmentQuantity = user.appointments?.length
     
@@ -44,42 +44,42 @@ function SelectAppointment() {
     useEffect(() => {
         axios.get('/api/doctor/all')
             .then(response => {
-                setDoctors(response.data);
+                setDoctors(response.data)
             })
-            .catch(error => console.log(error));
-    }, []);
+            .catch(error => console.log(error))
+    }, [])
 
 
     useEffect(() => {
         if (location.state && location.state.doctor) {
-            setSelectedDoctor(location.state.doctor);
-            setSelectedSpeciality(location.state.doctor.speciality);
+            setSelectedDoctor(location.state.doctor)
+            setSelectedSpeciality(location.state.doctor.speciality)
         }
-    }, [location.state]);
+    }, [location.state])
 
-    const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality);
+    const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality)
 
     // console.log(doctors)
 
         const handleSpecialitySelect = (e) => {
-            const speciality = e.target.value;
-            setSelectedSpeciality(speciality);
-            setSelectedDoctor(null);
-            setShowAppointment(false); // Resetear el estado para que no muestre el calendario automáticamente
-        };
+            const speciality = e.target.value
+            setSelectedSpeciality(speciality)
+            setSelectedDoctor(null)
+            setShowAppointment(false)
+        }
 
         const handleDoctorSelect = (e) => {
-            const fullName = e.target.value;
-            const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName);
-            setSelectedDoctor(selectedDoctor);
-        };
+            const fullName = e.target.value
+            const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName)
+            setSelectedDoctor(selectedDoctor)
+        }
 
 
         const handleShowAppointment = () => {
             if (selectedSpeciality && selectedDoctor) {
-                setShowAppointment(true);
+                setShowAppointment(true)
             } else {
-                setShowAppointment(false);
+                setShowAppointment(false)
             }
             if(!selectedSpeciality) {
                 setSpecialitySelected(true)

@@ -6,7 +6,7 @@ import axios from 'axios'
 import GeneralHeader from '../components/GeneralHeader'
 
 
-function SingUp() {
+function SignUp() {
 
     const firstNameRef = useRef(null)
     const lastNameRef = useRef(null)
@@ -320,7 +320,7 @@ function SingUp() {
                         
                         
                         <div className='relative'>
-                            <input type="submit" value="Sing up" className='bg-[#F19E22] rounded-xl py-2 px-1 hover:bg-[#dc901e] w-[180px] text-center font-bold text-white cursor-pointer'/>
+                            <input type="submit" value="Sign up" className='bg-[#F19E22] rounded-xl py-2 px-1 hover:bg-[#dc901e] w-[180px] text-center font-bold text-white cursor-pointer'/>
                             {registerSuccess && (
                             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
                                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -375,7 +375,7 @@ function SingUp() {
                                 </div>
                             </div>
                         )}
-                        <NavLink to={"/login"} className='text-red-600 font-semibold cursor-pointer text-xs underline'>Are you already registered? Sing in</NavLink>
+                        <NavLink to={"/login"} className='text-red-600 font-semibold cursor-pointer text-xs underline'>Are you already registered? Sign in</NavLink>
                 </form>
             </div>
             
@@ -389,4 +389,4 @@ function SingUp() {
     )
 }
 
-export default SingUp
+export default SignUp
