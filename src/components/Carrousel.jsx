@@ -11,10 +11,10 @@ export default function Carrousel() {
     return (
     <>
     <Swiper
-        autoplay={{
-        delay: 4000, 
-        disableOnInteraction: false, 
-        }}
+        // autoplay={{
+        // delay: 4000, 
+        // disableOnInteraction: false, 
+        // }}
 
         pagination={{
             dynamicBullets: true,
@@ -34,10 +34,13 @@ export default function Carrousel() {
                 </div>
                 <p className='font-bold text-3xl pl-4 pt-4 text-[#06A9B2] min-[768px]:hidden'>Get your checkups and studies at Serenety Health Center.</p>
                 <p className='font-bold text-2xl pl-4 text-[#06A9B2] min-[768px]:hidden'>We take care of your health.</p>
-                <div className='mt-8 min-[500px]:mt-0 relative'>
+                <NavLink to="/specialtiesHome" className='mt-8 min-[500px]:mt-0 relative'>
+                    <button className='absolute bg-[#F19E22] font-bold text-white w-40 h-10 rounded-lg top-[0px] ml-4 mt-4 min-[768px]:hidden'>See Specialties</button>
+                </NavLink>
+                {/* <div className='mt-8 min-[500px]:mt-0 relative'>
                     <NavLink to="/specialtiesHome" className='absolute bg-[#F19E22] font-bold text-white w-40 h-10 rounded-lg top-[0px] 
-                    ml-4 mt-4 min-[768px]:hidden px-6 pt-2'>See Specialties</NavLink>
-                </div>
+                    ml-4 mt-4 min-[768px]:hidden pl-4 pt-2'>See Specialties</NavLink>
+                </div> */}
         </SwiperSlide>
         
 
