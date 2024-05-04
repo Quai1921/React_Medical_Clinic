@@ -1,53 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import CalendarAppointments from '../components/CalendarAppointments';
-import { useLocation } from 'react-router-dom';
-import { SPECIALITIES } from '../utils/linksSpecialities';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import CalendarAppointments from '../components/CalendarAppointments'
+import { useLocation } from 'react-router-dom'
+import { SPECIALITIES } from '../utils/linksSpecialities'
 
 function Prueba() {
-    const location = useLocation();
-    const [doctors, setDoctors] = useState([]);
-    const [selectedSpeciality, setSelectedSpeciality] = useState('');
-    const [selectedDoctor, setSelectedDoctor] = useState(null);
-    const [showAppointment, setShowAppointment] = useState(false);
+    const location = useLocation()
+    const [doctors, setDoctors] = useState([])
+    const [selectedSpeciality, setSelectedSpeciality] = useState('')
+    const [selectedDoctor, setSelectedDoctor] = useState(null)
+    const [showAppointment, setShowAppointment] = useState(false)
 
     useEffect(() => {
         axios.get('/api/doctor/all')
             .then(response => {
-                setDoctors(response.data);
+                setDoctors(response.data)
             })
-            .catch(error => console.log(error));
-    }, []);
+            .catch(error => {
+                // console.log(error)
+            })
+    }, [])
 
     useEffect(() => {
         if (location.state && location.state.doctor) {
-            setSelectedDoctor(location.state.doctor);
-            setSelectedSpeciality(location.state.doctor.speciality);
+            setSelectedDoctor(location.state.doctor)
+            setSelectedSpeciality(location.state.doctor.speciality)
         }
-    }, [location.state]);
+    }, [location.state])
 
-    const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality);
+    const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality)
 
     const handleSpecialitySelect = (e) => {
-        const speciality = e.target.value;
-        setSelectedSpeciality(speciality);
-        setSelectedDoctor(null);
-        setShowAppointment(false); // Resetear el estado para que no muestre el calendario automáticamente
-    };
+        const speciality = e.target.value
+        setSelectedSpeciality(speciality)
+        setSelectedDoctor(null)
+        setShowAppointment(false) // Resetear el estado para que no muestre el calendario automáticamente
+    }
 
     const handleDoctorSelect = (e) => {
-        const fullName = e.target.value;
-        const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName);
-        setSelectedDoctor(selectedDoctor);
-    };
+        const fullName = e.target.value
+        const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName)
+        setSelectedDoctor(selectedDoctor)
+    }
 
     const handleShowAppointment = () => {
         if (selectedSpeciality && selectedDoctor) {
-            setShowAppointment(true);
+            setShowAppointment(true)
         } else {
-            setShowAppointment(false);
+            setShowAppointment(false)
         }
-    };
+    }
 
     return (
         <div className='flex flex-1 flex-col justify-center items-center'>
@@ -79,63 +81,63 @@ function Prueba() {
                 )}
             </div>
         </div>
-    );
+    )
 }
 
-export default Prueba;
+export default Prueba
 
 
 
 
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import CalendarAppointments from '../components/CalendarAppointments';
-// import { useLocation } from 'react-router-dom';
-// import { SPECIALITIES } from '../utils/linksSpecialities';
+// import React, { useState, useEffect } from 'react'
+// import axios from 'axios'
+// import CalendarAppointments from '../components/CalendarAppointments'
+// import { useLocation } from 'react-router-dom'
+// import { SPECIALITIES } from '../utils/linksSpecialities'
 
 // function Prueba() {
-//     const location = useLocation();
-//     const [doctors, setDoctors] = useState([]);
-//     const [selectedSpeciality, setSelectedSpeciality] = useState('');
-//     const [selectedDoctor, setSelectedDoctor] = useState(null);
-//     const [showAppointment, setShowAppointment] = useState(false);
+//     const location = useLocation()
+//     const [doctors, setDoctors] = useState([])
+//     const [selectedSpeciality, setSelectedSpeciality] = useState('')
+//     const [selectedDoctor, setSelectedDoctor] = useState(null)
+//     const [showAppointment, setShowAppointment] = useState(false)
 
 //     useEffect(() => {
 //         axios.get('/api/doctor/all')
 //             .then(response => {
-//                 setDoctors(response.data);
+//                 setDoctors(response.data)
 //             })
-//             .catch(error => console.log(error));
-//     }, []);
+//             .catch(error => console.log(error))
+//     }, [])
 
 //     useEffect(() => {
 //         if (location.state && location.state.doctor) {
-//             setSelectedDoctor(location.state.doctor);
-//             setSelectedSpeciality(location.state.doctor.speciality);
+//             setSelectedDoctor(location.state.doctor)
+//             setSelectedSpeciality(location.state.doctor.speciality)
 //         }
-//     }, [location.state]);
+//     }, [location.state])
 
-//     const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality);
+//     const filteredDoctors = doctors.filter(doctor => doctor.speciality === selectedSpeciality)
 
 //     const handleSpecialitySelect = (e) => {
-//         const speciality = e.target.value;
-//         setSelectedSpeciality(speciality);
-//         setSelectedDoctor(null);
-//     };
+//         const speciality = e.target.value
+//         setSelectedSpeciality(speciality)
+//         setSelectedDoctor(null)
+//     }
 
 //     const handleDoctorSelect = (e) => {
-//         const fullName = e.target.value;
-//         const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName);
-//         setSelectedDoctor(selectedDoctor);
-//     };
+//         const fullName = e.target.value
+//         const selectedDoctor = doctors.find(doctor => `${doctor.firstName} ${doctor.lastName}` === fullName)
+//         setSelectedDoctor(selectedDoctor)
+//     }
 
 //     const handleShowAppointment = () => {
 //         if (selectedSpeciality && selectedDoctor) {
-//             setShowAppointment(true);
+//             setShowAppointment(true)
 //         } else {
-//             setShowAppointment(false);
+//             setShowAppointment(false)
 //         }
-//     };
+//     }
 
 //     return (
 //         <div className='flex flex-1 flex-col justify-center items-center'>
@@ -168,10 +170,10 @@ export default Prueba;
 //                 )}
 //             </div>
 //         </div>
-//     );
+//     )
 // }
 
-// export default Prueba;
+// export default Prueba
 
 
 

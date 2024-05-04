@@ -57,7 +57,7 @@ function CalendarAppointments({doctorConfirmed}) {
         const currentDateObj = new Date(currentDate)
         currentDateObj.setDate(currentDateObj.getDate() - 3)
         if(currentDateObj < new Date().setDate(new Date().getDate() - 1)) {
-            console.log("Hola")
+            // console.log("Hola")
             currentDateObj.setDate(currentDateObj.getDate() + 3)
         }else{
             setCurrentDate(currentDateObj.toISOString().split('T')[0])
@@ -73,9 +73,9 @@ function CalendarAppointments({doctorConfirmed}) {
 
     function selectHour(e) {
         let timeAndDate = e.target.value.split(",")
-        console.log(timeAndDate[0])
-        console.log(emailDoctor)
-        console.log(timeAndDate[1])
+        // console.log(timeAndDate[0])
+        // console.log(emailDoctor)
+        // console.log(timeAndDate[1])
         setConfirmAppointment(true)
         setTimeAndDate1(timeAndDate[1])
         setTimeAndDate0(timeAndDate[0])
@@ -102,10 +102,12 @@ function CalendarAppointments({doctorConfirmed}) {
         })
             .then(response => {
                 dispatch(current(response.data))
-                console.log(response.data);
+                // console.log(response.data)
             })
-            .catch(error => console.log(error.response.data))
-        // window.location.reload()
+            .catch(error => {
+                // console.log(error.response.data)
+            })
+            // window.location.reload()
     }
     
 
@@ -116,14 +118,16 @@ function CalendarAppointments({doctorConfirmed}) {
                     { date: timeAndDate1, time: timeAndDate0, emailDoctor: emailDoctor },
                     { headers: { Authorization: "Bearer " + token } },
                 ).then(a => {
-                    console.log(a.data)
+                    // console.log(a.data)
                     setSuccessAppointment(true)
                 })
-                .catch(err => console.log(err.response.data))
+                .catch(err => {
+                    // console.log(err.response.data)
+                })
     }
 
     const handleCancel = () => {
-        setConfirmAppointment(false);
+        setConfirmAppointment(false)
     }
 
 

@@ -17,10 +17,12 @@ const DoctorAdmin = () => {
     useEffect(() => {
         axios.get("/api/doctor/all")
         .then(res => setDoctors(res.data))
-        .catch(err => console.log(err.response.data))
+        .catch(err => {
+            // console.log(err.response.data)
+        })
     }, [])
 
-    console.log(doctors)
+    // console.log(doctors)
 
 
     const filterDoctors = (doctors) => {

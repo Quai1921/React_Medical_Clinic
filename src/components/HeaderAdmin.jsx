@@ -40,11 +40,11 @@ function HeaderAdmin() {
     }
 
     const handleConfirm = () => {
-        setConfirmLogout(true);
+        setConfirmLogout(true)
     }
 
     const handleCancel = () => {
-        setConfirmLogout(false);
+        setConfirmLogout(false)
     }
 
 

@@ -9,7 +9,7 @@ import FooterAdmin from '../components/FooterAdmin.jsx'
 const DoctorDetail = () => {
 
     const [doctors, setDoctors] = useState([])
-    console.log(doctors)
+    // console.log(doctors)
 
     let user = {
 
@@ -17,7 +17,7 @@ const DoctorDetail = () => {
 
     const [users, setUsers] = useState([])
 
-    const params = useParams();
+    const params = useParams()
 
 
 
@@ -35,22 +35,24 @@ const DoctorDetail = () => {
             })
                 .then(res => {
                     // dispatch(current(res.data))
-                    console.log(res.data);
+                    // console.log(res.data)
                     setUsers(res.data)
 
                     
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    // console.log(err)
+                })
         
 
     }, [])
 
-    console.log(users);
+    // console.log(users)
     user = users?.find(user => user.id == params.id)
 
-    // console.log(params.id);
+    // console.log(params.id)
 
-    console.log(user);
+    // console.log(user)
 
     // useEffect(() => {
     //     axios.get('/api/doctor/all')
@@ -61,10 +63,10 @@ const DoctorDetail = () => {
     // }, [])
 
     // const findDoctorSpecialty = (doctorName) => {
-    //     const doctor = doctors.find(doc => doc.firstName + ' ' + doc.lastName === doctorName);
+    //     const doctor = doctors.find(doc => doc.firstName + ' ' + doc.lastName === doctorName)
     //     // console.log(doctor)
-    //     return doctor ? doctor.speciality : '';
-    // };
+    //     return doctor ? doctor.speciality : ''
+    // }
 
 
     return (

@@ -45,16 +45,16 @@ function SignIn() {
         if(emailValid && passwordValid) {
             axios.post("/api/patient/login", userData)
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 const tokenLogin = response.data
                 const role = getRoleFromJWT(tokenLogin)
-                console.log(tokenLogin)
+                // console.log(tokenLogin)
     
                 const isAdmin = role?.includes("ADMIN")
                 const isUser = role?.includes("PATIENT")
     
-                console.log(isAdmin)
-                console.log(isUser)
+                // console.log(isAdmin)
+                // console.log(isUser)
     
                 if (isUser) {
                     axios.get('/api/patient/current', {
@@ -69,7 +69,7 @@ function SignIn() {
                         // localStorage.setItem("lastLogin", new Date().toISOString())
                     })
                     .catch(error => {
-                        console.log(error.response.data)
+                        // console.log(error.response.data)
                         setinvalidEntrance(error.response.data)
                     })
                 } 
@@ -77,7 +77,7 @@ function SignIn() {
                 if (isAdmin) {
                     axios.post("/api/admin/login", userData)
                         .then(response => {
-                            console.log(response.data)
+                            // console.log(response.data)
                             let token = response.data
                             dispatch(login(token))
                             axios.get('/api/admin/current', {
@@ -90,18 +90,18 @@ function SignIn() {
                                 navigate("/appointmentsAdmin")
                             })
                             .catch(error => {
-                                console.log(error.response.data)
+                                // console.log(error.response.data)
                                 setinvalidEntrance(error.response.data)
                             })
                         })
                         .catch(error => {
-                            console.log(error.response.data)
+                            // console.log(error.response.data)
                             setinvalidEntrance(error.response.data)
                         })
                 }
             })
             .catch(error => {
-                console.log(error.response.data)
+                // console.log(error.response.data)
                 // console.log(error.response.status)
                 setinvalidEntrance(error.response.data)
             })
@@ -109,7 +109,7 @@ function SignIn() {
     }
 
 
-    console.log(userData)
+    // console.log(userData)
 
 
 

@@ -38,9 +38,11 @@ function GeneralFooter() {
             })
             axios.post('/api/form/send-email', formData)
                 .then(response => {
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
-                .catch(error => console.log(error))
+                .catch(error => {
+                    // console.log(error)
+                })
         } else {
             setFormError(true)
             setFormSuccess(false)

@@ -112,16 +112,16 @@ function SignUp() {
             birthDateValid = false
         }
 
-        const today = new Date();
-        const birthDate = new Date(birthDateRef.current.value);
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
+        const today = new Date()
+        const birthDate = new Date(birthDateRef.current.value)
+        let age = today.getFullYear() - birthDate.getFullYear()
+        const monthDiff = today.getMonth() - birthDate.getMonth()
         if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
         age--
         }
         if (age < 18) {
-        setAgeInvalid (true);
-        birthDateValid = false;
+        setAgeInvalid (true)
+        birthDateValid = false
         }
 
         if(emailRef.current.value.includes("@admin") || emailRef.current.value.includes("@doctor")) {
@@ -146,7 +146,7 @@ function SignUp() {
 
             axios.post("/api/patient/register", register)
                 .then(response => {
-                    console.log(response.data)
+                    // console.log(response.data)
                     if (response.status === 200) {
                         setRegisterSuccess(true)
                         setRegister({
@@ -161,7 +161,7 @@ function SignUp() {
                     }
                 })
                 .catch(error => {
-                    console.log(error.response.data)
+                    // console.log(error.response.data)
                     if (error.response.data == "There is a patient with that email" || error.response.data == "You can't use that email") {
                         setEmailExist(true)
                     }
@@ -236,7 +236,7 @@ function SignUp() {
         setShowPassword(!showPassword)
     }
 
-    console.log(register)
+    // console.log(register)
     // console.log(emailExist)
 
 

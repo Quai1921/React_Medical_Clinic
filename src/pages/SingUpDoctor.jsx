@@ -154,9 +154,9 @@ const RegisterDoctor = () => {
             axios.post("/api/doctor/register", register,
             {headers: {Authorization: "Bearer " + token}})
                 .then(response => {
-                    console.log(register)
-                    console.log(response.data)
-                    console.log(response.status);
+                    // console.log(register)
+                    // console.log(response.data)
+                    // console.log(response.status)
                     if (response.status === 201) {
                         setRegisterSuccess(true)
                         setRegister({
@@ -173,7 +173,7 @@ const RegisterDoctor = () => {
                     }
                 })
                 .catch(error => {
-                    console.log(error.response.data)
+                    // console.log(error.response.data)
                     if(error.response.data == "Already exist a doctor with that email"){
                         setEmailExist(true)
                         document.querySelectorAll("[name='workDays']").forEach(element => {
@@ -261,7 +261,7 @@ const RegisterDoctor = () => {
         else{
             workDaysTest = workDaysTest.filter(element => element !== e.target.value)
         }
-        console.log(workDaysTest)   
+        // console.log(workDaysTest)
     }
 
     let hoursTest = []
@@ -273,13 +273,13 @@ const RegisterDoctor = () => {
         else{
             hoursTest = hoursTest.filter(element => element !== e.target.value)
         }
-        console.log(hoursTest)   
+        // console.log(hoursTest)
     }
 
 
 
 
-    console.log(register)
+    // console.log(register)
 
 
 
