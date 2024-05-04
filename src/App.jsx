@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
-import SingIn from './pages/SingIn'
-import SingUp from './pages/SingUp'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
 import SelectAppointment from './pages/SelectAppointment'
 import Specialties from './components/Specialties'
 import { useDispatch, useSelector } from 'react-redux'
@@ -23,7 +23,6 @@ import DoctorAdmin from './pages/DoctorAdmin'
 import PatientDetail from './pages/PatientDetail'
 import DoctorDetail from './pages/DoctorDetail'
 import SpecialtiesHome from './pages/SpecialtiesHome'
-import Prueba from './pages/Prueba'
 
 
 
@@ -82,8 +81,8 @@ function App() {
         <Routes>
           
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<SingIn />} />
-          <Route path="/register" element={<SingUp />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
           <Route path="/specialtiesHome" element={<SpecialtiesHome/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ineccu" element={<Neurology />} />

@@ -10,7 +10,7 @@ function Home() {
     <>
         <GeneralHeader />
 
-        <main classneme="w-full flex flex-col flex-1">
+        <main className="w-full flex flex-col flex-1">
             <Carrousel/>
             
             <h1 className='text-center font-bold text-6xl mt-10 text-[#F19E22]'>SERENETY</h1>
