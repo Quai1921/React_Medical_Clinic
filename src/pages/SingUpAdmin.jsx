@@ -111,7 +111,7 @@ const RegisterAdmin = () => {
                     if(error.response.data == "The email is already registered"){
                         setEmailExist(true)
                     }
-                    console.log(error.response.data)
+                    // console.log(error.response.data)
                 })
         }
     }
@@ -188,7 +188,7 @@ const RegisterAdmin = () => {
 
 
 
-    console.log(register)
+    // console.log(register)
 
 
 

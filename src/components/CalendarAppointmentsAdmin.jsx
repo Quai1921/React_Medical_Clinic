@@ -56,7 +56,7 @@ function CalendarAppointmentsAdmin({doctorConfirmed, patientConfirmed}) {
         const currentDateObj = new Date(currentDate)
         currentDateObj.setDate(currentDateObj.getDate() - 3)
         if(currentDateObj < new Date().setDate(new Date().getDate() - 1)) {
-            console.log("Hola")
+            // console.log("Hola")
             currentDateObj.setDate(currentDateObj.getDate() + 3)
         }else{
             setCurrentDate(currentDateObj.toISOString().split('T')[0])
@@ -72,10 +72,10 @@ function CalendarAppointmentsAdmin({doctorConfirmed, patientConfirmed}) {
 
     function selectHour(e) {
         let timeAndDate = e.target.value.split(",")
-        console.log(timeAndDate[0])
-        console.log(emailDoctor)
-        console.log(timeAndDate[1])
-        console.log(patientConfirmed)
+        // console.log(timeAndDate[0])
+        // console.log(emailDoctor)
+        // console.log(timeAndDate[1])
+        // console.log(patientConfirmed)
         setConfirmAppointment(true)
         setTimeAndDate1(timeAndDate[1])
         setTimeAndDate0(timeAndDate[0])
@@ -99,14 +99,16 @@ function CalendarAppointmentsAdmin({doctorConfirmed, patientConfirmed}) {
                     { date: timeAndDate1, time: timeAndDate0, emailDoctor: emailDoctor, emailPatient: patientConfirmed.email },
                     { headers: { Authorization: "Bearer " + token }},
                 ).then(a => {
-                    console.log(a.data)
+                    // console.log(a.data)
                     setSuccessAppointment(true)
                 })
-                .catch(err => console.log(err.response.data))
+                .catch(err => {
+                    // console.log(err.response.data)
+                })
     }
 
     const handleCancel = () => {
-        setConfirmAppointment(false);
+        setConfirmAppointment(false)
     }
 
     const handleSuccess = () => {

@@ -29,7 +29,9 @@ const PatientsAdmin = () => {
         {headers: {
             'Authorization': "Bearer " + token}})
         .then(res => setPatients(res.data))
-        .catch(err => console.log(err.response.data))
+        .catch(err => {
+            // console.log(err.response.data)
+        })
     }, [])
 
     const filterPatients = (patients) => {

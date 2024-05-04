@@ -33,7 +33,9 @@ const PatientDetail = () => {
 
                     
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    // console.log(err)
+                })
         
 
     }, [])
@@ -49,7 +51,9 @@ const PatientDetail = () => {
             .then(response => {
                 setDoctors(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
 
     const findDoctorSpecialty = (doctorName) => {

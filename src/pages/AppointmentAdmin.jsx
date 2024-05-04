@@ -45,10 +45,12 @@ function AppointmentAdmin() {
             .then(response => {
                 setPatients(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
 
-    console.log(patients)
+    // console.log(patients)
 
     // useEffect(() => {
     //     axios.get('/api/doctor/specialities')
@@ -63,7 +65,9 @@ function AppointmentAdmin() {
             .then(response => {
                 setFilteredDoctors(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
     
     useEffect(() => {
@@ -71,7 +75,9 @@ function AppointmentAdmin() {
             .then(response => {
                 setDoctors(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
 
 
@@ -156,10 +162,10 @@ function AppointmentAdmin() {
 
     //let appointmentsPending = appointmentsDays?.filter(appointment => appointment > new Date().toISOString().split('T')[0]).length
 
-    //console.log(appointmentsPending);
+    //console.log(appointmentsPending)
 
     // console.log(selectedSpecialityAndDoctor)
-    // console.log(doctors);
+    // console.log(doctors)
 
     // console.log(user.appointments)
     // console.log(selectedSpeciality)

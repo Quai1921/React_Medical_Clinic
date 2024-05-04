@@ -36,10 +36,12 @@ const AdminPanel = () => {
     useEffect(() => {
         axios.get('/api/appointment/')
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setListAppointments(response.data)
             })
-            .catch(error => console.log(error.response.data))
+            .catch(error => {
+                // console.log(error.response.data)
+            })
         
     }, []) 
 
@@ -48,10 +50,12 @@ const AdminPanel = () => {
     useEffect(() => {
         axios.get('/api/doctor/all')
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setListDoctors(response.data)
             })
-            .catch(error => console.log(error.response.data))
+            .catch(error => {
+                // console.log(error.response.data)
+            })
         
     }, []) 
 
@@ -62,7 +66,9 @@ const AdminPanel = () => {
                 // console.log(response.data)
                 setListPatients(response.data)
             })
-            .catch(error => console.log(error.response.data))
+            .catch(error => {
+                // console.log(error.response.data)
+            })
         
     }, []) 
 

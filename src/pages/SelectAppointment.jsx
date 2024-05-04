@@ -46,7 +46,9 @@ function SelectAppointment() {
             .then(response => {
                 setDoctors(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
 
 
@@ -91,8 +93,8 @@ function SelectAppointment() {
 
 
     
-    console.log(selectedDoctor)
-    console.log(selectedSpeciality)
+    // console.log(selectedDoctor)
+    // console.log(selectedSpeciality)
 
     // console.log(currentDate)
     // console.log(currentHour)
@@ -127,9 +129,11 @@ function SelectAppointment() {
             }
             
         }).then(response => {
-            console.log(response.data)
+            // console.log(response.data)
             setConfirmDelete([false, ""])
-        }).catch(error => console.log(error.response.data))
+        }).catch(error => {
+            // console.log(error.response.data)
+        })
         
     }
 
@@ -156,7 +160,9 @@ function SelectAppointment() {
             .then(response => {
                 dispatch(current(response.data))
             })
-            .catch(error => console.log(error.response.data))
+            .catch(error => {
+                // console.log(error.response.data)
+            })
     }
 
         function handleSelectChange(e) {

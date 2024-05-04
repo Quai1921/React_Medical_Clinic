@@ -12,7 +12,9 @@ const Specialties = () => {
             .then(response => {
                 setDoctors(response.data)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log(error)
+            })
     }, [])
 
 
